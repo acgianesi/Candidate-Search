@@ -45,20 +45,21 @@ const CandidateSearch = () => {
 
   return (
     <div>
+      
+      <h1 className="title">Candidate Search</h1>
+
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {candidate && !loading && !error && (
        
        <div className='card'>
-          <h1 className="title">Candidate Search</h1>
           <h2>{candidate.name} {(candidate.login)}</h2>
           <img className='card-image' src={candidate.avatar_url} alt={candidate.login} />
           <p>Location:{candidate.location || 'Unknown'}</p>
           <p>Email:{candidate.email || 'Unavailable'}</p>
           <p>Company:{candidate.company || 'N/A'}</p>
           <a href={candidate.html_url} target="_blank" rel="noopener noreferrer"></a>
-          <br />
-         <div className='button-container'>
+          <div className='button-container'>
           <button className="button green" onClick={handleSave}>+</button>
           <button className="button red" onClick={handleNext}>-</button>
         </div>
