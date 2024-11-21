@@ -11,26 +11,45 @@ const SavedCandidates = () => {
       setSavedCandidates(parsedCandidates);
     }
   }, []);
+
+  const handleReject = (candidateToReject: Candidate) => {
+    const updatedCandidates = savedCandidates.filter(
+      (candidate) => candidate.login !== candidateToReject.login
+    );
+    setSavedCandidates(updatedCandidates);
+    localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
+  };
+  
   return (
     <div>
       <h1>Potential Candidates</h1>
       {savedCandidates.length === 0 ? (
         <p>No saved candidates yet.</p>
       ) : (
-        <ul>
-          {savedCandidates.map((candidate, index) => (
-            <li key={index}>
-              <h2>{candidate.name}</h2>
-              <img src={candidate.avatar_url} alt={candidate.login} />
-              <p>{candidate.location}</p>
-              <p>{candidate.email}</p>
-              <p>{candidate.company}</p>
-              <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-                GitHub Profile
-              </a>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Email</th>
+              <th>Company</th>
+              <th>Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            {savedCandidates.map((candidate, index) => (
+              <tr key={index}>
+                <td><img src={candidate.avatar_url} alt={candidate.login} width="50" height="50" /></td>
+                <td>{candidate.name}</td>
+                <td>{candidate.location || 'Unknown'}</td>
+                <td>{candidate.email || 'Unavailable'}</td>
+                <td>{candidate.company || 'N/A'}</td>
+                <td> <button onClick={() => handleReject(candidate)} className="button red">-</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
