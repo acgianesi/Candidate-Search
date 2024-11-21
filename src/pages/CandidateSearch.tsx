@@ -48,18 +48,20 @@ const CandidateSearch = () => {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {candidate && !loading && !error && (
-        <div>
-          <h2>{candidate.name}</h2>
-          <img src={candidate.avatar_url} alt={candidate.login} />
-          <p>{candidate.location}</p>
-          <p>{candidate.email}</p>
-          <p>{candidate.company}</p>
-          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-            GitHub Profile
-          </a>
+       
+       <div className='card'>
+          <h1 className="title">Candidate Search</h1>
+          <h2>{candidate.name} {(candidate.login)}</h2>
+          <img className='card-image' src={candidate.avatar_url} alt={candidate.login} />
+          <p>Location:{candidate.location || 'Unknown'}</p>
+          <p>Email:{candidate.email || 'Unavailable'}</p>
+          <p>Company:{candidate.company || 'N/A'}</p>
+          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer"></a>
           <br />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleNext}>Next</button>
+         <div className='button-container'>
+          <button className="button green" onClick={handleSave}>+</button>
+          <button className="button red" onClick={handleNext}>-</button>
+        </div>
         </div>
       )}
     </div>
