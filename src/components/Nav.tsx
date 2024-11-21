@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   // DONE: Add necessary code to display the navigation bar and link between the pages
   return (
-    <nav>
-      <ul style={{ display: 'flex', padding: 0 }}>
-        <li style={{ marginRight: '20px' }}>
+    <nav className="nav">
+      <ul className="nav-list">
+        <li className="nav-item">
           <Link
             to="/"
             style={{ color: 'white' }}>
@@ -13,7 +13,7 @@ const Nav = () => {
           </Link>
         </li>
 
-        <li>
+        <li className="nav-item">
           <Link
             to="/SavedCandidates"
             style={{ color: 'white' }}>
