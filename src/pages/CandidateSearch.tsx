@@ -58,7 +58,7 @@ const CandidateSearch = () => {
           <p>Location:{candidate.location || 'Unknown'}</p>
           <p>Email:{candidate.email || 'Unavailable'}</p>
           <p>Company:{candidate.company || 'N/A'}</p>
-          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer"></a>
+          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer"> View GitHub</a>
           <div className='button-container'>
           <button className="button green" onClick={handleSave}>+</button>
           <button className="button red" onClick={handleNext}>-</button>
