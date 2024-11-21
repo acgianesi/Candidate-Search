@@ -1,33 +1,40 @@
-# React + TypeScript + Vite
+# Candidate-Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a Candidate Search Application designed to assist users in identifying and saving the best candidates for potential hiring. The application interacts with the GitHub API to display detailed candidate information, making the hiring process efficient and user-friendly. Application is fully responsive and deployed on Netlify.
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-* Configure the top-level `parserOptions` property as follows:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To get your environment up and running, follow these steps:
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+1. Clone this repository to your local machine.
+2. Navigate to the project folder and run npm install to install the required dependencies:
+npm install
+3. Start the development server: npm run dev
+4. Application will run on netlify
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Screenshots
+
+![](./public/1.png) 
+![](./public/3.png) 
+![](./public/2.png)
+
+## Usage
+
+Navigate to the Home page where you can perform a candidate search to review profiles fetched from the GitHub API. Use the "+" button to save a candidate or the "-" button to skip. Saved candidates can be viewed on the Potential Candidates page, where their details are stored persistently in local storage, even after page reloads.
+
+## Credits
+
+## License
+
+Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
